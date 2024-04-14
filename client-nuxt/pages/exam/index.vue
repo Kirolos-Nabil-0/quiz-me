@@ -13,7 +13,7 @@
         <div v-if="examStore.examStarted">
           <div v-for="(question, index) in examStore.exam.questions" :key="question.id">
             <v-card flat class="mb-3">
-              <v-card-title>{{ question.question }}</v-card-title>
+              <v-card-title class="text-wrap">{{ question.question }}</v-card-title>
               <v-card-text>
                 <v-radio-group v-model="examStore.answers[index]">
                   <v-radio v-for="option in question.options" :key="option" :label="option" :value="option"></v-radio>
