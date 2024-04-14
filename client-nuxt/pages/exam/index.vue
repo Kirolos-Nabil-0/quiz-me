@@ -74,7 +74,7 @@ function updateTimer() {
 function submitExam() {
   clearInterval(timerInterval.value);
   examStore.submitExam(id.value).then(() => {
-    router.push(`/exam/${id.value}/dashboard`);
+    router.push(`/exam/${id.value}`);
   }).catch(error => console.error('Failed to submit exam:', error));
 }
 
