@@ -42,7 +42,7 @@ onMounted(async () => {
 
 async function fetchExam() {
   try {
-    const response = await axios.get(`http://localhost:3001/api/exams/${route.params.id}`);
+    const response = await axios.get(`https://quiz-me-h886.onrender.com/api/exams/${route.params.id}`);
     exam.value = response.data;
   } catch (error) {
     console.error('Failed to fetch exam details:', error);

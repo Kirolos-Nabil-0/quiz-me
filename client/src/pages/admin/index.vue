@@ -55,7 +55,7 @@ onMounted(async () => {
 
 async function fetchExams() {
   try {
-    const response = await axios.get('http://localhost:3001/api/exams');
+    const response = await axios.get('https://quiz-me-h886.onrender.com/api/exams');
     exams.value = response.data;
   } catch (error) {
     console.error('Failed to fetch exams:', error);
@@ -66,7 +66,7 @@ async function fetchExams() {
 
 async function deleteExam(exam) {
   try {
-    await axios.delete(`http://localhost:3001/api/exams/${exam._id}`);
+    await axios.delete(`https://quiz-me-h886.onrender.com/api/exams/${exam._id}`);
     await fetchExams(); // Refresh list after deletion
   } catch (error) {
     console.error('Failed to delete exam:', error);

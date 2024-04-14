@@ -30,7 +30,7 @@ const headers = ref([
 
 onMounted(() => {
   fetchExamDetails();
-  pollingInterval.value = setInterval(fetchExamDetails, 30000);
+  pollingInterval.value = setInterval(fetchExamDetails, 10000);
 });
 
 onUnmounted(() => {
@@ -41,7 +41,7 @@ onUnmounted(() => {
 
 async function fetchExamDetails() {
   try {
-    const { data } = await axios.get(`http://localhost:3001/api/exams/${route.params.id}`);
+    const { data } = await axios.get(`https://quiz-me-h886.onrender.com/api/exams/${route.params.id}`);
     examDetails.value = data;
     examiners.value = data.examiners || [];
   } catch (error) {
