@@ -1,17 +1,29 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
+interface Exam {
+  _id?: string;
+  questions?: any[];
+  duration?: number;
+}
+
+interface Submission {
+  examinerName: string;
+  answers: (string | null)[];
+  finish_time: number;
+}
+
 export const useExamStore = defineStore("exam", {
   state: () => ({
-    exam: {},
+    exam: {} as Exam,
     examinerName: "",
-    answers: [],
+    answers: [] as (string | null)[],
     examStarted: false,
-    startTime: null,
+    startTime: null as Date | null,
   }),
   getters: {
-    allAnswered(state) {
-      return state.answers.every((answer) => answer != null);
+    allAnswered(state): boolean {
+      return state.answers.every((answer) => answer !== null);
     },
   },
   actions: {
@@ -24,13 +36,13 @@ export const useExamStore = defineStore("exam", {
     saveStateToLocalStorage() {
       localStorage.setItem("examState", JSON.stringify(this.$state));
     },
-    async initializeExam(examId) {
+    async initializeExam(examId: string) {
       this.loadStateFromLocalStorage();
       if (!this.examStarted && examId) {
         await this.startExam(examId);
       }
     },
-    async startExam(examId) {
+    async startExam(examId: string) {
       try {
         const response = await axios.get(
           `https://quiz-me-h886.onrender.com/api/exams/${examId}`
@@ -44,11 +56,12 @@ export const useExamStore = defineStore("exam", {
         console.error("Failed to fetch exam:", error);
       }
     },
-    async submitExam(id) {
+    async submitExam(id: string) {
       if (this.examStarted && this.allAnswered) {
         const endTime = new Date();
-        const timeTaken = (endTime - this.startTime) / 1000; // seconds
-        const submission = {
+        const timeTaken =
+          (endTime.getTime() - this.startTime!.getTime()) / 1000; // seconds
+        const submission: Submission = {
           examinerName: this.examinerName,
           answers: this.answers,
           finish_time: timeTaken,
@@ -74,9 +87,10 @@ export const useExamStore = defineStore("exam", {
       localStorage.removeItem("examState");
     },
     checkTimeLimit() {
-      const timePassed = (new Date() - this.startTime) / 60000;
+      const timePassed =
+        (new Date().getTime() - this.startTime!.getTime()) / 60000; // minutes
       if (this.exam.duration && timePassed >= this.exam.duration) {
-        this.submitExam(this.exam._id);
+        this.submitExam(this.exam._id!);
       }
     },
   },
