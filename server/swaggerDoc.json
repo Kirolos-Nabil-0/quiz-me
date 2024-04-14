@@ -161,50 +161,50 @@
                         "description": "Server error"
                     }
                 }
-            }
-        },
-        "/exams/{id}/examiners": {
-            "post": {
-                "summary": "Add an examiner to an exam",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
+            },
+            "/exams/{id}/submit": {
+                "post": {
+                    "summary": "Submit exam answers",
+                    "parameters": [
+                        {
+                            "in": "path",
+                            "name": "id",
+                            "required": true,
                             "schema": {
-                                "$ref": "#/components/schemas/Examiner"
+                                "type": "string"
                             }
                         }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Successfully added examiner",
+                    ],
+                    "requestBody": {
+                        "required": true,
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Exam"
+                                    "$ref": "#/components/schemas/ExamSubmission"
                                 }
                             }
                         }
                     },
-                    "400": {
-                        "description": "Invalid input, object invalid"
-                    },
-                    "404": {
-                        "description": "Exam not found"
-                    },
-                    "500": {
-                        "description": "Server error"
+                    "responses": {
+                        "200": {
+                            "description": "Successfully submitted exam answers",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/ExamSubmissionResponse"
+                                    }
+                                }
+                            }
+                        },
+                        "400": {
+                            "description": "Invalid input, object invalid"
+                        },
+                        "404": {
+                            "description": "Exam not found"
+                        },
+                        "500": {
+                            "description": "Server error"
+                        }
                     }
                 }
             }
@@ -283,6 +283,38 @@
                     "score": {
                         "type": "number",
                         "default": 1
+                    }
+                }
+            },
+            "ExamSubmission": {
+                "type": "object",
+                "required": [
+                    "examinerName",
+                    "answers"
+                ],
+                "properties": {
+                    "examinerName": {
+                        "type": "string"
+                    },
+                    "answers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "ExamSubmissionResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "score": {
+                        "type": "number"
+                    },
+                    "examId": {
+                        "type": "string"
                     }
                 }
             }
