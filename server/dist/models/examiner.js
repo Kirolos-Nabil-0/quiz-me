@@ -12,8 +12,9 @@ const examinerSchema = exports.examinerSchema = new _mongoose.default.Schema({
     required: true
   },
   finish_time: {
+    // set the defult to curernt timeStamp
     type: Date,
-    required: true
+    default: Date.now
   },
   score: {
     type: Number,

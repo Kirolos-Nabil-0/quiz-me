@@ -118,7 +118,6 @@ const submitExamAnswers = async (req, res) => {
     // Update the exam document with the results and other submission details
     exam.examiners.push({
       name: examinerName,
-      finish_time: finish_time,
       score: score
     });
     await exam.save();

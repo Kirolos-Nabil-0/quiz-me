@@ -6,8 +6,9 @@ export const examinerSchema = new mongoose.Schema({
     required: true,
   },
   finish_time: {
+    // set the defult to curernt timeStamp
     type: Date,
-    required: true,
+    default: Date.now,
   },
   score: {
     type: Number,
