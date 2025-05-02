@@ -45,7 +45,7 @@ export const useExamStore = defineStore("exam", {
     async startExam(examId: string) {
       try {
         const response = await axios.get(
-          `https://quiz-me-h886.onrender.com/api/exams/${examId}`
+          `https://quiz-6hm9b.ondigitalocean.app/api/exams/${examId}`
         );
         this.exam = response.data;
         this.answers = new Array(response.data.questions.length).fill(null);
@@ -68,7 +68,7 @@ export const useExamStore = defineStore("exam", {
         };
         try {
           await axios.post(
-            `https://quiz-me-h886.onrender.com/api/${id}/submit`,
+            `https://quiz-6hm9b.ondigitalocean.app/api/${id}/submit`,
             submission
           );
           this.resetExam();

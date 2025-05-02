@@ -1,20 +1,35 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
-  //...
- build: {
+  devtools: { enabled: true },
+  nitro: {
+    compatibilityDate: '2025-05-02'
+  },
+  build: {
     transpile: ['vuetify'],
-
+  },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'ar',
+        dir: 'rtl'
+      },
+      title: 'كنيسة الانبا انطونيوس - نظام الامتحانات',
+      meta: [
+        { name: 'description', content: 'مسابقه الخدام عيد القيامه لكنيسة الانبا انطونيوس بشبرا' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ]
+    }
   },
   modules: [
+    '@pinia/nuxt',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
-    '@pinia/nuxt',
-    'nuxt-primevue',
-
   ],
   vite: {
     vue: {
@@ -23,4 +38,8 @@ export default defineNuxtConfig({
       },
     },
   },
+  css: [
+    'vuetify/styles',
+    '@mdi/font/css/materialdesignicons.css',
+  ],
 })

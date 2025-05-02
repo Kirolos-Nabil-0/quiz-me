@@ -52,7 +52,7 @@ async function submitExam() {
   });
 
   try {
-    const response = await axios.post('https://quiz-me-h886.onrender.com/api/exams', exam.value);
+    const response = await axios.post('https://quiz-6hm9b.ondigitalocean.app/api/exams', exam.value);
     if (response.status === 201) {
       router.push('/admin/exams/');  // Assuming this is the correct route
     }

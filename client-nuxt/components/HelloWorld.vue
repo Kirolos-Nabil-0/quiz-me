@@ -1,9 +1,9 @@
 <template>
-  <v-container class="fill-height">
+  <v-container class="fill-height rtl">
     <v-responsive class="align-center text-center fill-height">
       <v-img height="300" src="@/assets/logo.svg" />
 
-      <div class="text-body-2 font-weight-light mb-n1">Welcome to</div>
+      <div class="text-body-2 font-weight-light mb-n1">مرحبا بك في</div>
 
       <h1 class="text-h2 font-weight-bold">Vuetify</h1>
 
@@ -24,7 +24,7 @@
               start
             />
 
-            Components
+            المكونات
           </v-btn>
         </v-col>
 
@@ -44,7 +44,7 @@
               start
             />
 
-            Get Started
+            ابدأ الان
           </v-btn>
         </v-col>
 
@@ -62,7 +62,7 @@
               start
             />
 
-            Community
+            المجتمع
           </v-btn>
         </v-col>
       </v-row>
@@ -73,3 +73,10 @@
 <script setup lang="ts">
   //
 </script>
+
+<style scoped>
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+</style>

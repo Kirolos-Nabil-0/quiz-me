@@ -41,7 +41,7 @@ onUnmounted(() => {
 
 async function fetchExamDetails() {
   try {
-    const { data } = await axios.get(`https://quiz-me-h886.onrender.com/api/exams/${route.params.id}`);
+    const { data } = await axios.get(`https://quiz-6hm9b.ondigitalocean.app/api/exams/${route.params.id}`);
     examDetails.value = data;
     examiners.value = data.examiners || [];
   } catch (error) {
