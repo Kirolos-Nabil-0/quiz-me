@@ -2,12 +2,16 @@
   "name": "nuxt-app",
   "private": true,
   "type": "module",
+  
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
+  },
+  "optionalDependencies": {
+    "@oxc-parser/binding-linux-x64-gnu": "0.2.0"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
@@ -17,6 +21,7 @@
     "primevue": "^3.51.0",
     "vue-router": "^4.3.0"
   },
+  
   "overrides": {
     "vue": "latest"
   },
@@ -29,4 +34,5 @@
     "vite-plugin-vuetify": "^2.1.1",
     "vuetify": "^3.8.3"
   }
+  
 }
