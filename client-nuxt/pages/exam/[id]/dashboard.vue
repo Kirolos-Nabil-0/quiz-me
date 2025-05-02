@@ -153,7 +153,7 @@
     
     <!-- Footer -->
     <div class="text-center mt-3 footer-text">
-      كنيسة القديس أنطونيوس ببشتيل © {{ new Date().getFullYear() }}
+      كنيسة القديس أنطونيوس بباسوس © {{ new Date().getFullYear() }}
     </div>
   </v-container>
 </template>
