@@ -14,7 +14,7 @@
     </v-main>
 
     <v-footer app class="bg-primary text-center text-white d-flex flex-column">
-      <div>كنيسة الانبا انطونيوس بشبرا © {{ new Date().getFullYear() }}</div>
+      <div>كنيسة الانبا انطونيوس بشبرا الخيمة © {{ new Date().getFullYear() }}</div>
       <div class="text-caption mt-1">مسابقه الخدام عيد القيامه</div>
     </v-footer>
   </v-app>

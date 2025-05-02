@@ -17,7 +17,7 @@
             </template>
           </v-img>
           <v-card-title class="text-h4 font-weight-bold text-primary pt-6 text-center">
-            كنيسة الانبا انطونيوس بشبرا و توابعها
+            كنيسة الانبا انطونيوس بشبرا الخيمة و توابعها
           </v-card-title>
           <v-card-subtitle class="text-center text-secondary pb-0">
             مسابقه الخدام عيد القيامه
