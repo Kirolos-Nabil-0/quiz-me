@@ -20,7 +20,7 @@
             كنيسة الانبا انطونيوس بشبرا الخيمة و توابعها
           </v-card-title>
           <v-card-subtitle class="text-center text-secondary pb-0">
-            مراجعة الاولادعيد القيامه
+            مراجعة الاولادلامتحان الدين المسيحي
           </v-card-subtitle>
           <v-card-text class="text-center">
             <v-btn 
