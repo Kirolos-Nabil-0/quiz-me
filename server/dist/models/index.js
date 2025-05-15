@@ -31,4 +31,4 @@ var _User = _interopRequireDefault(require("./User"));
 var _exam = require("./exam");
 var _question = require("./question");
 var _examiner = require("./examiner");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }

@@ -24,4 +24,4 @@ Object.defineProperty(exports, "users", {
 var _users = _interopRequireDefault(require("./users"));
 var _hello = _interopRequireDefault(require("./hello"));
 var _exam = _interopRequireDefault(require("./exam"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }

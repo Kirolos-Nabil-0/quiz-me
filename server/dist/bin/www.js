@@ -8,7 +8,7 @@
 var _debug = _interopRequireDefault(require("debug"));
 var _http = _interopRequireDefault(require("http"));
 var _app = _interopRequireDefault(require("../app"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 const debug = (0, _debug.default)('js/www:server');
 
 /**

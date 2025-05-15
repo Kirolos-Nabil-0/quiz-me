@@ -5,7 +5,7 @@
         <v-card class="elevation-3" rounded="lg">
           <v-card-item class="bg-primary">
             <v-card-title class="text-h4 text-white text-center">
-              اختيار المسابقة
+              اختيار المراجعة
             </v-card-title>
           </v-card-item>
           

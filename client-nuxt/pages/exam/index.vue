@@ -13,7 +13,7 @@
     <div :class="{'pt-16': examStore.examStarted}">
       <v-card elevation="2" class="mx-auto exam-card" max-width="600px">
         <div v-if="!examStore.examStarted" class="exam-header bg-primary">
-          <v-card-title class="text-h5 text-md-h4 text-white text-center">{{ 'مسابقة خدام الكنيسة' }}</v-card-title>
+          <v-card-title class="text-h5 text-md-h4 text-white text-center">{{ 'مراجعة اولادالكنيسة' }}</v-card-title>
         </div>
         
         <v-card-text>
@@ -49,7 +49,7 @@
               variant="elevated"
               :ripple="true">
               <v-icon start>mdi-play-circle</v-icon>
-              <span class="text-body-1">{{ 'بدء المسابقة' }}</span>
+              <span class="text-body-1">{{ 'بدء المراجعة' }}</span>
             </v-btn>
           </v-form>
           
@@ -124,7 +124,7 @@
                 size="large" 
                 v-else
                 :disabled="!canSubmit">
-                إنهاء المسابقة
+                إنهاء المراجعة
                 <v-icon end>mdi-check-circle</v-icon>
               </v-btn>
             </div>
@@ -150,9 +150,9 @@
     <!-- Submit confirmation dialog -->
     <v-dialog v-model="showSubmitDialog" max-width="400px">
       <v-card>
-        <v-card-title class="text-h5">تأكيد تسليم المسابقة</v-card-title>
+        <v-card-title class="text-h5">تأكيد تسليم المراجعة</v-card-title>
         <v-card-text>
-          <p>هل أنت متأكد من رغبتك في تسليم إجابات المسابقة؟</p>
+          <p>هل أنت متأكد من رغبتك في تسليم إجابات المراجعة؟</p>
           <p v-if="!examStore.allAnswered" class="text-error">
             <v-icon color="error">mdi-alert-circle</v-icon>
             لديك {{ unansweredCount }} سؤال لم تجب عليه. هل ترغب في المتابعة؟
@@ -180,7 +180,7 @@
       location="top">
       <div class="d-flex align-center">
         <v-icon start>mdi-clock-alert</v-icon>
-        <span>تنبيه: بقي {{ Math.floor(remainingTime.value / 60) }} دقيقة من وقت المسابقة</span>
+        <span>تنبيه: بقي {{ Math.floor(remainingTime.value / 60) }} دقيقة من وقت المراجعة</span>
       </div>
     </v-snackbar>
   </v-container>

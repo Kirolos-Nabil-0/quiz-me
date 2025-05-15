@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       },
       title: 'كنيسة الانبا انطونيوس - نظام الامتحانات',
       meta: [
-        { name: 'description', content: 'مسابقه الخدام عيد القيامه لكنيسة الانبا انطونيوس بشبرا' }
+        { name: 'description', content: 'مراجعة الاولادعيد القيامه لكنيسة الانبا انطونيوس بشبرا الخيمة' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

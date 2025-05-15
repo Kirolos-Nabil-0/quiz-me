@@ -24,7 +24,7 @@
         </div>
         <div v-else-if="sortedExaminers.length === 0" class="text-center pa-8 no-results">
           <v-icon size="64" color="grey lighten-1">mdi-account-question</v-icon>
-          <div class="text-h6 mt-4">لم يشارك أي خادم في المسابقة حتى الآن</div>
+          <div class="text-h6 mt-4">لم يشارك أي خادم في المراجعة حتى الآن</div>
         </div>
         <v-card-actions class="justify-center pt-1 pb-4">
           <div class="d-flex flex-column align-center">

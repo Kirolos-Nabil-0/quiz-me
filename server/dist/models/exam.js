@@ -7,7 +7,7 @@ exports.examSchema = exports.Exam = void 0;
 var _mongoose = _interopRequireDefault(require("mongoose"));
 var _question = require("./question.js");
 var _examiner = require("./examiner.js");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 const examSchema = exports.examSchema = new _mongoose.default.Schema({
   name: {
     type: String,
